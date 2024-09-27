@@ -1,0 +1,23 @@
+{
+    "name": "gqlgen-todos",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile",
+        "target": "vscode"
+    },
+    "workspaceFolder": "/server/gqlgen-todos",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go",
+                "GitHub.copilot",
+                "zxh404.vscode-proto3"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/../,target=/server,type=bind"
+    ],
+    "remoteUser": "root",
+    "postCreateCommand": "/bin/sh .devcontainer/post_create.sh"
+}
